@@ -2,6 +2,8 @@
 
 A simple Tic Tac Toe game built using Create React App
 
+![alt text](https://github.com/rndware/tic-tac-toe/media/playing.gif "In Game Video")
+
 Highlights:
 
 - Written in React/Redux/Typescript
@@ -28,5 +30,7 @@ TO-DO:
 ## Setup 
 
 Run `npm i` to install packages
+
 Run `npm test` to run unit tests
+
 Run `npm start` to run locally on [http://localhost:3000](http://localhost:3000)
