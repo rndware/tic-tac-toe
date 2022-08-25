@@ -2,7 +2,7 @@
 
 A simple Tic Tac Toe game built using Create React App
 
-![alt text](https://github.com/rndware/tic-tac-toe/blob/master/media/playing.gif)
+<img src="https://github.com/rndware/tic-tac-toe/blob/master/media/playing.gif" width="50%"/>
 
 Highlights:
 
