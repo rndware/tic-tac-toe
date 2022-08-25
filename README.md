@@ -9,11 +9,11 @@ A simple Tic Tac Toe game built using Create React App.
 - Written in React/Redux/Typescript
 - Use of functional components where possible
 - Optimised table rending using `React.memo`
-- Unit tested with BDD
+- Unit tested with BDD where possible
 - Styled using Sass modules with BEM syntax
 - Used Material UI for icons / inputs and buttons
 - Decoupled board from game logic
-- Responsive
+- Partially responsive
 
 ## TO-DO
 
