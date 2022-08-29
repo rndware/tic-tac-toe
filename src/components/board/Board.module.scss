@@ -2,20 +2,22 @@
 
 $borderWidth: 3px;
 
+$border: $borderWidth solid $gridColor;
+
 .v {
-  border-left: $borderWidth solid $gridColor;
-  border-right: $borderWidth solid $gridColor;
+  border-left: $border;
+  border-right: $border;
 }
 
 .h {
-  border-top: $borderWidth solid $gridColor;
-  border-bottom: $borderWidth solid $gridColor;
+  border-top: $border;
+  border-bottom: $border;
 }
 
 .Board__table {
   margin: 0 auto;
   padding: 20px;
-  border-spacing: 0;
+  border-collapse: collapse;
   color: $colorText;
   cursor: pointer;
 
@@ -24,28 +26,39 @@ $borderWidth: 3px;
     cursor: initial;
   }
 
-  tr:first-of-type {
-    td:nth-child(even) {
-      @extend .v;
+  &--lined {
+    @extend .Board__table;
+
+    tr:first-of-type {
+      td:nth-child(even) {
+        @extend .v;
+      }
+    }
+
+    tr:nth-child(even) {
+      td:first-of-type {
+        @extend .h;
+      }
+      td:nth-child(even) {
+        @extend .v;
+        @extend .h;
+      }
+      td:last-of-type {
+        @extend .h;
+      }
+    }
+
+    tr:last-of-type {
+      td:nth-child(even) {
+        @extend .v;
+      }
     }
   }
 
-  tr:nth-child(even) {
-    td:first-of-type {
-      @extend .h;
-    }
-    td:nth-child(even) {
-      @extend .v;
-      @extend .h;
-    }
-    td:last-of-type {
-      @extend .h;
-    }
-  }
-
-  tr:last-of-type {
-    td:nth-child(even) {
-      @extend .v;
+  &--grid {
+    @extend .Board__table;
+    td {
+      border: $border;
     }
   }
 }

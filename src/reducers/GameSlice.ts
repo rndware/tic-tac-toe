@@ -50,7 +50,7 @@ export const gameSlice = createSlice({
 export const { start, end, setWinner, setWinningPlayer, setPlayingMove } =
   gameSlice.actions;
 
-// TO-DO: make not global)
+// TO-DO: make not global
 let gameService: GameService;
 
 export const startGame = (): AppThunk => (dispatch, getState) => {

@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.story {
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+#board-cell-1 {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  padding: 10px 0;
+}

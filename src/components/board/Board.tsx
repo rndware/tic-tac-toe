@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { HighlightColors } from "../../types/player";
 import { GridIndex, GridData, GridItem } from "../../types/game";
 import { chunkArray } from "../../utils";
@@ -8,6 +9,8 @@ import BoardCell from "../board-cell";
 import styles from "./Board.module.scss";
 
 interface BoardProps {
+  layout?: "grid" | "lined";
+  gridSize?: number;
   disabled?: boolean;
   gridData: GridData;
   highlighted?: GridIndex[];
@@ -16,6 +19,7 @@ interface BoardProps {
 }
 
 interface BoardRowProps {
+  gridSize: number;
   gridItems: GridData;
   indexRow: GridIndex;
   highlighted?: GridIndex[];
@@ -27,7 +31,7 @@ function BoardRow(props: BoardRowProps) {
   return (
     <tr className={"BoardRow"}>
       {props.gridItems.map((gridItem: GridItem, indexColumn: GridIndex) => {
-        const flatIndex = props.indexRow * gridSize + indexColumn;
+        const flatIndex = props.indexRow * props.gridSize + indexColumn;
         return (
           <td key={`board-row-cell-${flatIndex}`} className="BoardRow__cell">
             <BoardCell
@@ -52,21 +56,24 @@ const MemoWrapper = React.memo(
 );
 
 export default function Board(props: BoardProps) {
-  const chunckedArray: GridData[] = chunkArray(props.gridData, gridSize);
+  const size = props.gridSize || gridSize;
 
+  const chunckedArray: GridData[] = chunkArray(props.gridData, size);
   return (
     <div className={"Board"}>
       <table
         data-testid="board-table"
-        className={
-          props.disabled
-            ? styles["Board__table--disabled"]
-            : styles["Board__table"]
-        }
+        className={classNames({
+          [styles["Board__table"]]: true,
+          [styles["Board__table--disabled"]]: props.disabled,
+          [styles["Board__table--grid"]]: props.layout === "grid",
+          [styles["Board__table--lined"]]: !(props.layout === "grid"),
+        })}
       >
         <tbody>
           {chunckedArray.map((gridItems: GridItem[], indexRow: GridIndex) => (
             <MemoWrapper
+              gridSize={size}
               gridItems={gridItems}
               indexRow={indexRow}
               highlighted={props.highlighted}

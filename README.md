@@ -13,6 +13,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Styled using Sass modules with BEM syntax
 - Used Material UI for icons / inputs and buttons
 - Decoupled board from game logic
+- Storybook component explorer integration
 - Partially responsive
 
 ## TO-DO
@@ -24,7 +25,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Make game service no longer global in module
 - Use i18n and make fully translatable
 - Create util for toggling element modifier e.g. `--highlight`
-- Add storybook component explorer to project
+- Add storybook with 100% coverage
 - ~~Create settings page to change player difficulty~~
 - Create player form to input player details: name, age, colour etc.
 
