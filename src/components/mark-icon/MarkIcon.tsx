@@ -9,7 +9,7 @@ import styles from "./MarkIcon.module.scss";
 function getMaterialIcon(props: { value: GridItem }) {
   if (props.value === Mark.o) {
     return (
-      <CloseIcon
+      <CircleOutlinedIcon
         aria-label="Nought symbol"
         aria-hidden={false}
         data-testid="mark-icon-nought"
@@ -18,7 +18,7 @@ function getMaterialIcon(props: { value: GridItem }) {
     );
   } else if (props.value === Mark.x) {
     return (
-      <CircleOutlinedIcon
+      <CloseIcon
         aria-label="Cross symbol"
         aria-hidden={false}
         data-testid="mark-icon-cross"
