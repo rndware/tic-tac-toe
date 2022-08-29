@@ -24,7 +24,7 @@ export default function SettingsForm(props: settingsFormProps) {
         labelId="difficulty-setting-label"
         id="difficulty-setting-select"
         value={props.difficulty}
-        label="Difficulty"
+        label="difficulty"
         onChange={props.onDifficultyChange}
       >
         <MenuItem value={Difficulty.Easy}>Easy</MenuItem>
