@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { GridIndex, GridItem } from "../../types/game";
 import { HighlightColors } from "../../types/player";
 import MarkIcon from "../mark-icon";
@@ -18,11 +19,11 @@ export default function BoardCell(props: BoardCellProps) {
   return (
     <div
       id={fullId}
-      className={
-        props.isHighlighted
-          ? styles[`BoardCell--highlighted-${props.highlightColor}`]
-          : styles["BoardCell"]
-      }
+      className={classNames({
+        [styles.BoardCell]: true,
+        [styles[`BoardCell--highlighted-${props.highlightColor}`]]:
+          props.isHighlighted,
+      })}
       data-testid={fullId}
       onClick={props.onClick}
     >

@@ -1,21 +1,28 @@
 import React from "react";
+import classNames from "classnames";
 import styles from "./StarBackground.module.scss";
-
-// TO-DO: use https://www.npmjs.com/package/classnames
 
 /**
  * React wrapper for: https://codepen.io/alexitaylor/pen/RgxJwg
  */
+
+function renderParticles() {
+  let arr = [];
+  for (let i = 1; i <= 4; i++) {
+    arr.push(
+      <div
+        className={classNames([styles.particle, styles[`particle-${i}`]])}
+      ></div>
+    );
+  }
+  return arr;
+}
+
 export function StarBackground() {
   return (
-    <div>
+    <>
       <div className={styles["page-bg"]}></div>
-      <div className={styles["animation-wrapper"]}>
-        <div className={styles["particle"] + " " + styles["particle-1"]}></div>
-        <div className={styles["particle"] + " " + styles["particle-2"]}></div>
-        <div className={styles["particle"] + " " + styles["particle-3"]}></div>
-        <div className={styles["particle"] + " " + styles["particle-4"]}></div>
-      </div>
-    </div>
+      <div className={styles["animation-wrapper"]}>{renderParticles()}</div>
+    </>
   );
 }

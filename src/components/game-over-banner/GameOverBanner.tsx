@@ -1,5 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
+import classNames from "classnames";
 import { Mode } from "../../types/game";
 import { Player } from "../../types/player";
 import Button from "@mui/material/Button";
@@ -25,11 +26,10 @@ export default function GameOverBanner(props: PlayerFormProps) {
   return (
     <div
       data-testid="game-over"
-      className={
-        styles[
-          `GameOverBanner${props.gameMode === Mode.Ended ? "--fadeIn" : ""}`
-        ]
-      }
+      className={classNames({
+        [styles.GameOverBanner]: true,
+        [styles["GameOverBanner--fadeIn"]]: props.gameMode === Mode.Ended,
+      })}
     >
       <Typography variant="h3" component="h3">
         {renderBannerText(props.winningPlayer)}

@@ -64,7 +64,7 @@ export default function Board(props: BoardProps) {
       <table
         data-testid="board-table"
         className={classNames({
-          [styles["Board__table"]]: true,
+          [styles.Board__table]: true,
           [styles["Board__table--disabled"]]: props.disabled,
           [styles["Board__table--grid"]]: props.layout === "grid",
           [styles["Board__table--lined"]]: !(props.layout === "grid"),

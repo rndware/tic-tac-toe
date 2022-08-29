@@ -1,6 +1,6 @@
-export function appResetExclude(excludeReducers: string[]) {
+export function appReset(payload: { excludeReducers: string[] }) {
   return {
     type: "app/reset",
-    payload: { excludeReducers },
+    payload,
   };
 }

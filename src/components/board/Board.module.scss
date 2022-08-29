@@ -22,13 +22,10 @@ $border: $borderWidth solid $gridColor;
   cursor: pointer;
 
   &--disabled {
-    @extend .Board__table;
     cursor: initial;
   }
 
   &--lined {
-    @extend .Board__table;
-
     tr:first-of-type {
       td:nth-child(even) {
         @extend .v;
@@ -56,7 +53,6 @@ $border: $borderWidth solid $gridColor;
   }
 
   &--grid {
-    @extend .Board__table;
     td {
       border: $border;
     }

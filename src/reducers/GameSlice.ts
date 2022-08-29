@@ -2,7 +2,7 @@ import { Mode, Winner, isGridIndex } from "../types/game";
 import GameService from "../services/GameService";
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "../app/store";
-import { appResetExclude } from "../actions";
+import { appReset } from "../actions";
 import {
   markSquare,
   setGridData,
@@ -54,8 +54,7 @@ export const { start, end, setWinner, setWinningPlayer, setPlayingMove } =
 let gameService: GameService;
 
 export const startGame = (): AppThunk => (dispatch, getState) => {
-  // app reducers reset
-  dispatch(appResetExclude(["players", "settings"]));
+  dispatch(appReset({ excludeReducers: ["players", "settings"] }));
   dispatch(start());
 
   const humanPlayer = getState().players.human!;

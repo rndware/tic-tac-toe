@@ -16,7 +16,6 @@
   padding: $spacingDefault;
 
   &--fadeIn {
-    @extend .GameOverBanner;
     animation: imageFadeIn $gameTransitionSpeed;
   }
 
