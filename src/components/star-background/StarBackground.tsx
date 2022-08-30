@@ -18,7 +18,7 @@ function renderParticles() {
   return arr;
 }
 
-export function StarBackground() {
+export default function StarBackground() {
   return (
     <>
       <div className={styles["page-bg"]}></div>

@@ -1,2 +1,3 @@
-import { StarBackground } from "./StarBackground";
+import StarBackground from "./StarBackground";
+
 export default StarBackground;

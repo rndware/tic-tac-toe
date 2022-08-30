@@ -16,6 +16,10 @@ body {
   color: white;
 }
 
+.MuiSelect-select {
+  color: white !important; /* TO-DO: find more specific selector */
+}
+
 #board-cell-1 {
   display: flex;
   justify-content: center;
