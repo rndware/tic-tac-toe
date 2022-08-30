@@ -11,6 +11,7 @@ function renderParticles() {
   for (let i = 1; i <= 4; i++) {
     arr.push(
       <div
+        key={`particle-${i}`}
         className={classNames([styles.particle, styles[`particle-${i}`]])}
       ></div>
     );
