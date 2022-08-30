@@ -24,7 +24,7 @@ describe("BorderCell", () => {
     );
 
     expect(query.getByTestId(cellTestId).className).toBe(
-      "BoardCell--highlighted-red"
+      "BoardCell BoardCell--highlighted-red"
     );
   });
 

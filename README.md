@@ -25,7 +25,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Make game service no longer global in module
 - Use i18n and make fully translatable
 - Create util for toggling element modifier e.g. `--highlight`
-- Add storybook with 100% coverage
+- ~~Add storybook with full component coverage~~
 - ~~Create settings page to change player difficulty~~
 - Create player form to input player details: name, age, colour etc.
 

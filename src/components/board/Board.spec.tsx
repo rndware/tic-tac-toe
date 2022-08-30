@@ -13,10 +13,12 @@ describe("Board", () => {
   const cellTestId = "board-cell-1";
 
   describe("game is active and enabled for the player", () => {
-    it("should render an enabled board to the player", () => {
+    it("should render an enabled lined board to the player", () => {
       const query = render(<Board gridData={gridData} onClick={() => {}} />);
 
-      expect(query.getByTestId(bardTestId).className).toBe("Board__table");
+      expect(query.getByTestId(bardTestId).className).toBe(
+        "Board__table Board__table--lined"
+      );
     });
 
     it("should not supppress click events made by the player", () => {
@@ -30,13 +32,13 @@ describe("Board", () => {
   });
 
   describe("game is over and disabled for the player", () => {
-    it("should render a disabled board to the player", () => {
+    it("should render a disabled lined board to the player", () => {
       const query = render(
         <Board disabled={true} gridData={gridData} onClick={() => {}} />
       );
 
       expect(query.getByTestId(bardTestId).className).toBe(
-        "Board__table--disabled"
+        "Board__table Board__table--disabled Board__table--lined"
       );
     });
 

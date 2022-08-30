@@ -29,7 +29,7 @@ describe("GameOverBanner", () => {
       );
 
       expect(query.getByTestId("game-over").className).toBe(
-        "GameOverBanner--fadeIn"
+        "GameOverBanner GameOverBanner--fadeIn"
       );
     });
 

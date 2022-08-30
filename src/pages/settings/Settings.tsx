@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import SettingsContainer from "../../containers/SettingsContainer.spec";
+import SettingsContainer from "../../containers/SettingsContainer";
 import styles from "./SettingsPage.module.scss";
 
 export default function Settings() {
