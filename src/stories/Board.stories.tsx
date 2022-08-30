@@ -14,8 +14,8 @@ export default {
   component: Board,
   argTypes: {
     highlightColor: {
-      options: [HighlightColors.red, HighlightColors.blue]
-    }
+      options: [HighlightColors.red, HighlightColors.blue],
+    },
   },
 } as ComponentMeta<typeof Board>;
 
@@ -43,9 +43,9 @@ BlankGridLarge.args = {
 
 BlankGridLarge.argTypes = {
   layout: {
-   control: false 
-  }
-}
+    control: false,
+  },
+};
 
 let played: GridItem[] = range(gridSize * gridSize);
 played[0] = Mark.x;
