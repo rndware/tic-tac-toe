@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { pure } from "recompose";
 import Button from "@mui/material/Button";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
@@ -55,4 +54,4 @@ function SettingsForm(props: settingsFormProps) {
   );
 }
 
-export default pure(SettingsForm);
+export default React.memo(SettingsForm);

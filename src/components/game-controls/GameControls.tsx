@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import { pure } from "recompose";
 import styles from "./GameControls.module.scss";
 
 function GameControls(props: { onUndo: (e: any) => void; disabled: boolean }) {
@@ -17,4 +16,4 @@ function GameControls(props: { onUndo: (e: any) => void; disabled: boolean }) {
   );
 }
 
-export default pure(GameControls);
+export default React.memo(GameControls);

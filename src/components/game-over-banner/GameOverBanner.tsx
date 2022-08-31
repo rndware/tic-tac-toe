@@ -1,5 +1,4 @@
 import React from "react";
-import { pure } from "recompose";
 import Typography from "@mui/material/Typography";
 import classNames from "classnames";
 import { Mode } from "../../types/game";
@@ -47,4 +46,4 @@ function GameOverBanner(props: PlayerFormProps) {
   );
 }
 
-export default pure(GameOverBanner);
+export default React.memo(GameOverBanner);

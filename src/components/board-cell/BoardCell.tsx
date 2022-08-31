@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import { pure } from "recompose";
 import { GridIndex, GridItem } from "../../types/game";
 import { HighlightColors } from "../../types/player";
 import MarkIcon from "../mark-icon";
@@ -33,4 +32,4 @@ function BoardCell(props: BoardCellProps) {
   );
 }
 
-export default pure(BoardCell);
+export default React.memo(BoardCell);

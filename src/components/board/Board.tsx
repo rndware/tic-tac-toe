@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import { pure } from "recompose";
 import { HighlightColors } from "../../types/player";
 import { GridIndex, GridData, GridItem } from "../../types/game";
 import { chunkArray } from "../../utils";
@@ -28,26 +27,24 @@ interface BoardRowProps {
   onClick: (e: any, index: GridIndex) => void;
 }
 
-const BoardRow = pure((props: BoardRowProps) => {
-  return (
-    <tr className={"BoardRow"}>
-      {props.gridItems.map((gridItem: GridItem, indexColumn: GridIndex) => {
-        const flatIndex = props.indexRow * props.gridSize + indexColumn;
-        return (
-          <td key={`board-row-cell-${flatIndex}`} className="BoardRow__cell">
-            <BoardCell
-              id={flatIndex}
-              value={gridItem}
-              isHighlighted={props.highlighted?.includes(flatIndex)}
-              highlightColor={props.highlightColor}
-              onClick={(e: any) => props.onClick(e, flatIndex)}
-            />
-          </td>
-        );
-      })}
-    </tr>
-  );
-});
+const BoardRow = (props: BoardRowProps) => (
+  <tr className={"BoardRow"}>
+    {props.gridItems.map((gridItem: GridItem, indexColumn: GridIndex) => {
+      const flatIndex = props.indexRow * props.gridSize + indexColumn;
+      return (
+        <td key={`board-row-cell-${flatIndex}`} className="BoardRow__cell">
+          <BoardCell
+            id={flatIndex}
+            value={gridItem}
+            isHighlighted={props.highlighted?.includes(flatIndex)}
+            highlightColor={props.highlightColor}
+            onClick={(e: any) => props.onClick(e, flatIndex)}
+          />
+        </td>
+      );
+    })}
+  </tr>
+);
 
 const MemoWrapper = React.memo(
   BoardRow,
@@ -91,4 +88,4 @@ function Board(props: BoardProps) {
   );
 }
 
-export default pure(Board);
+export default React.memo(Board);

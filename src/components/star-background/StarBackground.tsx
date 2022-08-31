@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import { pure } from "recompose";
 import styles from "./StarBackground.module.scss";
 
 /**
@@ -29,4 +28,4 @@ function StarBackground() {
   );
 }
 
-export default pure(StarBackground);
+export default React.memo(StarBackground);
