@@ -19,8 +19,9 @@ A simple Tic Tac Toe game built using Create React App.
 ## TO-DO
 
 - Remove all 'any' types remaining
+- Convert functional components to pure components where possible
 - Unit test all remaining modules
-- Add in `classnames` for class toggling
+- ~~Add in `classnames` for class toggling~~
 - Reduce number of dispatch calls in `"game/playMove"` Thunk
 - Make game service no longer global in module
 - Use i18n and make fully translatable
