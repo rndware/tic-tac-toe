@@ -15,27 +15,41 @@ interface settingsFormProps {
   onDifficultyChange: (e: any) => void;
 }
 
+function renderDifficultyOptions() {
+  let arr = [];
+  for (const option in Difficulty) {
+    arr.push(<MenuItem value={option}>{option}</MenuItem>);
+  }
+  return arr;
+}
+
 export default function SettingsForm(props: settingsFormProps) {
   return (
-    <FormControl className={styles.SettingsForm}>
-      <InputLabel id="difficulty-setting-label">Game Difficulty</InputLabel>
-      <Select
-        className={styles.Select}
-        labelId="difficulty-setting-label"
-        id="difficulty-setting-select"
-        value={props.difficulty}
-        label="difficulty"
-        onChange={props.onDifficultyChange}
-      >
-        <MenuItem value={Difficulty.Easy}>Easy</MenuItem>
-        <MenuItem value={Difficulty.Normal}>Normal</MenuItem>
-        <MenuItem value={Difficulty.Hard}>Hard</MenuItem>
-      </Select>
+    <form className={styles.SettingsForm} noValidate autoComplete="off">
+      <FormControl>
+        <InputLabel id="difficulty-setting-label">Game Difficulty</InputLabel>
+        <Select
+          className={styles.Select}
+          labelId="difficulty-setting-label"
+          id="difficulty-setting-select"
+          value={props.difficulty}
+          label="difficulty"
+          onChange={props.onDifficultyChange}
+        >
+          {renderDifficultyOptions()}
+        </Select>
+      </FormControl>
       <div className={styles.SettingsForm__controls}>
-        <Button color="primary" variant="contained" component={Link} to={"/"}>
+        <Button
+          type="submit"
+          color="primary"
+          variant="contained"
+          component={Link}
+          to={"/"}
+        >
           Done
         </Button>
       </div>
-    </FormControl>
+    </form>
   );
 }
