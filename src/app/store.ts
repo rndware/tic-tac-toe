@@ -9,12 +9,14 @@ import boardReducer from "../reducers/BoardSlice";
 import playersSlice from "../reducers/PlayersSlice";
 import gameSlice from "../reducers/GameSlice";
 import settingsReducer from "../reducers/SettingsSlice";
+import historySlice from "../reducers/HistorySlice";
 
 const combinedReducer = combineReducers({
   settings: settingsReducer,
   board: boardReducer,
   players: playersSlice,
   game: gameSlice,
+  history: historySlice,
 });
 
 function resetApp(

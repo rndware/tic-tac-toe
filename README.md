@@ -13,6 +13,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Styled using Sass modules with BEM syntax
 - Used Material UI for icons / inputs and buttons
 - Decoupled board from game logic
+- Undo button to replay interactions using board history
 - Storybook component explorer integration
 - Partially responsive
 

@@ -79,18 +79,13 @@ describe("game reducer", () => {
       settings: {
         difficulty: Difficulty.Easy,
       },
+      board: {
+        gridData: [1,2,3],
+      },
     };
 
     const middlewares = [thunk];
     const mockStore = configureMockStore(middlewares);
-
-    const expectedActions = [
-      {
-        type: "app/reset",
-        payload: { excludeReducers: ["players", "settings"] },
-      },
-      { type: "game/start" },
-    ];
 
     let store: any;
     beforeEach(() => {
@@ -98,8 +93,26 @@ describe("game reducer", () => {
       store.dispatch(startGame());
     });
 
-    it("should reset the local app state and set status to playing", () => {
-      expect(store.getActions()).toEqual(expectedActions);
+    it("should reset the local app state but exclude the players and settings", () => {
+      expect(store.getActions()[0]).toEqual({
+        type: "app/reset",
+        payload: { excludeReducers: ["players", "settings"] },
+      });
+    });
+
+    it("should set the game status to playing", () => {
+      expect(store.getActions()[1]).toEqual({
+        type: "game/start",
+      });
+    });
+
+    it("should record the unmarked board in the history record", () => {
+      expect(store.getActions()[2]).toEqual({
+        type: "history/recordMarkHistory",
+        payload: {
+          boardSnapshot: [1,2,3],
+        },
+      });
     });
 
     it("should start the game service with correct information", () => {

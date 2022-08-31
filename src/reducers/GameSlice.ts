@@ -1,15 +1,24 @@
-import { Mode, Winner, isGridIndex } from "../types/game";
+import { Mode, Winner, isGridIndex, GridIndex } from "../types/game";
 import GameService from "../services/GameService";
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "../app/store";
 import { appReset } from "../actions";
 import {
+  getGridData,
   markSquare,
   setGridData,
   setHighlight,
   setHighlightColor,
 } from "./BoardSlice";
 import { Player } from "../types/player";
+import {
+  getLastBoardSnapshot,
+  getMarksRecordCount,
+  recordMarkHistory,
+  revertToPreviousInteraction,
+} from "./HistorySlice";
+import { getHumanPlayer, getComputerPlayer } from "./PlayersSlice";
+import { getDifficulty } from "./SettingsSlice";
 
 export interface Game {
   mode: Mode;
@@ -57,23 +66,41 @@ export const startGame = (): AppThunk => (dispatch, getState) => {
   dispatch(appReset({ excludeReducers: ["players", "settings"] }));
   dispatch(start());
 
-  const humanPlayer = getState().players.human!;
-  const computerPlayer = getState().players.computer!;
-  const difficulty = getState().settings.difficulty;
+  const state = getState();
+  const humanPlayer = getHumanPlayer(state);
+  const computerPlayer = getComputerPlayer(state);
+  const difficulty = getDifficulty(state);
+
+  // record the blank board that we can revert to later
+  dispatch(
+    recordMarkHistory({
+      boardSnapshot: getGridData(state),
+    })
+  );
 
   gameService = new GameService(difficulty, humanPlayer, computerPlayer);
+};
+
+export const undoInteraction = (): AppThunk => (dispatch, getState) => {
+  // keep blank board entry in move history
+  if (getMarksRecordCount(getState()) > 1) {
+    dispatch(revertToPreviousInteraction());
+    dispatch(setGridData(getLastBoardSnapshot(getState())));
+  }
 };
 
 // TO-DO: reduce number of dispatch calls for optimisation
 export const playMove = createAsyncThunk<void, number, { state: RootState }>(
   "game/playMove",
-  async (index: number, { dispatch, getState }) => {
-    const humanPlayer = getState().players.human;
+  async (index: GridIndex, { dispatch, getState }) => {
+    const firstState = getState();
 
+    const humanPlayer = getHumanPlayer(firstState);
     const humanMark = humanPlayer?.mark!;
-    const markedGrid = getState().board.gridData;
-    const mode = getState().game.mode;
-    const playingMove = getState().game.playingMove;
+
+    const markedGrid = getGridData(firstState);
+    const mode = getGameMode(firstState);
+    const playingMove = getPlayingMove(firstState);
 
     if (
       !isGridIndex(markedGrid[index]) ||
@@ -85,10 +112,26 @@ export const playMove = createAsyncThunk<void, number, { state: RootState }>(
 
     dispatch(setPlayingMove(true));
     dispatch(markSquare({ index, mark: humanMark }));
-    const updatedMarkedGrid = getState().board.gridData;
+
+    const secondState = getState();
+    const updatedMarkedGrid = getGridData(secondState);
+
+    dispatch(
+      recordMarkHistory({
+        player: humanPlayer,
+        boardSnapshot: updatedMarkedGrid,
+      })
+    );
 
     const finalMarkedGrid = await gameService.doComputerMove(updatedMarkedGrid);
     dispatch(setGridData(finalMarkedGrid));
+
+    dispatch(
+      recordMarkHistory({
+        player: humanPlayer,
+        boardSnapshot: finalMarkedGrid,
+      })
+    );
 
     let winner = gameService.getWinner();
 
@@ -110,5 +153,7 @@ export const playMove = createAsyncThunk<void, number, { state: RootState }>(
 );
 
 export const getGameMode = (state: RootState): Mode => state.game.mode;
+export const getPlayingMove = (state: RootState): Mode =>
+  state.game.playingMove;
 
 export default gameSlice.reducer;

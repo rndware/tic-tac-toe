@@ -6,6 +6,7 @@ import { Player } from "../types/player";
 import { startGame, Game } from "../reducers/GameSlice";
 import { RootState, AppDispatch } from "../app/store";
 import BoardContainer from "./BoardContainer";
+import GameControlsContainer from "./GameControlsContainer";
 import GameOverBanner from "../components/game-over-banner/GameOverBanner";
 
 import styles from "./GameContainer.module.scss";
@@ -42,6 +43,7 @@ class GameContainer extends React.Component<GameContainerProps> {
         }
       >
         <BoardContainer />
+        <GameControlsContainer />
       </div>
       {this.props.gameMode === Mode.Ended && (
         <GameOverBanner

@@ -73,4 +73,10 @@ export const { createHumanPlayer, generateComputerPlayer } =
 export const getHumanPlayerMark = (state: RootState): Mark =>
   state.players.human?.mark!;
 
+export const getHumanPlayer = (state: RootState): Player =>
+  state.players.human!;
+
+export const getComputerPlayer = (state: RootState): Player =>
+  state.players.computer!;
+
 export default playersSlice.reducer;
