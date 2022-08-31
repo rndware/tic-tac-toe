@@ -1,8 +1,8 @@
 import React from "react";
-import { GridItem, Mark } from "../../types/game";
-
+import { pure } from "recompose";
 import CloseIcon from "@mui/icons-material/Close";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
+import { GridItem, Mark } from "../../types/game";
 
 import styles from "./MarkIcon.module.scss";
 
@@ -30,6 +30,8 @@ function getMaterialIcon(props: { value: GridItem }) {
   }
 }
 
-export default function MarkIcon(props: { value: GridItem }) {
+function MarkIcon(props: { value: GridItem }) {
   return <div className={styles.MarkIcon}>{getMaterialIcon(props)}</div>;
 }
+
+export default pure(MarkIcon);

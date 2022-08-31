@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { pure } from "recompose";
 import { HighlightColors } from "../../types/player";
 import { GridIndex, GridData, GridItem } from "../../types/game";
 import { chunkArray } from "../../utils";
@@ -27,7 +28,7 @@ interface BoardRowProps {
   onClick: (e: any, index: GridIndex) => void;
 }
 
-function BoardRow(props: BoardRowProps) {
+const BoardRow = pure((props: BoardRowProps) => {
   return (
     <tr className={"BoardRow"}>
       {props.gridItems.map((gridItem: GridItem, indexColumn: GridIndex) => {
@@ -46,7 +47,7 @@ function BoardRow(props: BoardRowProps) {
       })}
     </tr>
   );
-}
+});
 
 const MemoWrapper = React.memo(
   BoardRow,
@@ -55,7 +56,7 @@ const MemoWrapper = React.memo(
   }
 );
 
-export default function Board(props: BoardProps) {
+function Board(props: BoardProps) {
   const size = props.gridSize || gridSize;
 
   const chunckedArray: GridData[] = chunkArray(props.gridData, size);
@@ -89,3 +90,5 @@ export default function Board(props: BoardProps) {
     </div>
   );
 }
+
+export default pure(Board);

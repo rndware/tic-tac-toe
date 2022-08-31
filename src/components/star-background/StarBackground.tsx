@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { pure } from "recompose";
 import styles from "./StarBackground.module.scss";
 
 /**
@@ -19,7 +20,7 @@ function renderParticles() {
   return arr;
 }
 
-export default function StarBackground() {
+function StarBackground() {
   return (
     <>
       <div className={styles["page-bg"]}></div>
@@ -27,3 +28,5 @@ export default function StarBackground() {
     </>
   );
 }
+
+export default pure(StarBackground);

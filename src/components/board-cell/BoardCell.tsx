@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { pure } from "recompose";
 import { GridIndex, GridItem } from "../../types/game";
 import { HighlightColors } from "../../types/player";
 import MarkIcon from "../mark-icon";
@@ -14,7 +15,7 @@ interface BoardCellProps {
   highlightColor?: HighlightColors | null;
 }
 
-export default function BoardCell(props: BoardCellProps) {
+function BoardCell(props: BoardCellProps) {
   const fullId = props.id ? `board-cell-${props.id}` : undefined;
   return (
     <div
@@ -31,3 +32,5 @@ export default function BoardCell(props: BoardCellProps) {
     </div>
   );
 }
+
+export default pure(BoardCell);

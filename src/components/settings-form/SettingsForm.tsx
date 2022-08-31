@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { pure } from "recompose";
 import Button from "@mui/material/Button";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
@@ -23,7 +24,7 @@ function renderDifficultyOptions() {
   return arr;
 }
 
-export default function SettingsForm(props: settingsFormProps) {
+function SettingsForm(props: settingsFormProps) {
   return (
     <form className={styles.SettingsForm} noValidate autoComplete="off">
       <FormControl>
@@ -53,3 +54,5 @@ export default function SettingsForm(props: settingsFormProps) {
     </form>
   );
 }
+
+export default pure(SettingsForm);

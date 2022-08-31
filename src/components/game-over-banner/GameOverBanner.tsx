@@ -1,4 +1,5 @@
 import React from "react";
+import { pure } from "recompose";
 import Typography from "@mui/material/Typography";
 import classNames from "classnames";
 import { Mode } from "../../types/game";
@@ -22,7 +23,7 @@ function renderBannerText(winningPlayer: Player | null) {
   }
 }
 
-export default function GameOverBanner(props: PlayerFormProps) {
+function GameOverBanner(props: PlayerFormProps) {
   return (
     <div
       data-testid="game-over"
@@ -45,3 +46,5 @@ export default function GameOverBanner(props: PlayerFormProps) {
     </div>
   );
 }
+
+export default pure(GameOverBanner);
