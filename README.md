@@ -20,6 +20,7 @@ A simple Tic Tac Toe game built using Create React App.
 
 - Remove all 'any' types remaining
 - Convert functional components to pure components where possible
+- Refactor to use selectors inside thunks
 - Unit test all remaining modules
 - ~~Add in `classnames` for class toggling~~
 - Reduce number of dispatch calls in `"game/playMove"` Thunk
