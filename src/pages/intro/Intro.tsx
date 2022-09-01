@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import StarBackground from "../../components/star-background";
 import styles from "./Intro.module.scss";
 
-export default function Intro() {
+const Intro = () => {
   return (
     <div className={styles.IntroPage}>
       <StarBackground />
@@ -31,4 +31,6 @@ export default function Intro() {
       </div>
     </div>
   );
-}
+};
+
+export default Intro;

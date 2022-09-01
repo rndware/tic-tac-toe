@@ -9,7 +9,7 @@ const SettingsContainer = () => {
   return (
     <SettingsForm
       difficulty={useAppSelector(getDifficulty)}
-      onDifficultyChange={(e) => dispatch(setDifficulty(e.target.value))}
+      onDifficultyChange={(e: any) => dispatch(setDifficulty(e.target.value))}
     />
   );
 };

@@ -3,7 +3,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import StarBackground from "../../components/star-background";
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div className="NotFoundPage">
       <StarBackground />
@@ -12,4 +12,6 @@ export default function NotFound() {
       </Typography>
     </div>
   );
-}
+};
+
+export default NotFound;
