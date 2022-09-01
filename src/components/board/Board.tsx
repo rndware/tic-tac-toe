@@ -28,7 +28,7 @@ interface BoardRowProps {
 }
 
 const BoardRow = (props: BoardRowProps) => (
-  <tr className={"BoardRow"}>
+  <tr className="BoardRow">
     {props.gridItems.map((gridItem: GridItem, indexColumn: GridIndex) => {
       const flatIndex = props.indexRow * props.gridSize + indexColumn;
       return (
@@ -58,7 +58,7 @@ const Board = (props: BoardProps) => {
 
   const chunckedArray: GridData[] = chunkArray(props.gridData, size);
   return (
-    <div className={"Board"}>
+    <div className="Board">
       <table
         data-testid="board-table"
         className={classNames({
