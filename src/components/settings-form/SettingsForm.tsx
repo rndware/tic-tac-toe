@@ -17,8 +17,15 @@ interface SettingsFormProps {
 
 const renderDifficultyOptions = () => {
   let arr = [];
+  let i = 0;
+
   for (const option in Difficulty) {
-    arr.push(<MenuItem value={option}>{option}</MenuItem>);
+    arr.push(
+      <MenuItem key={`difficulty-options-item-${i}`} value={option}>
+        {option}
+      </MenuItem>
+    );
+    i++;
   }
   return arr;
 };
