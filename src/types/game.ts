@@ -21,6 +21,11 @@ export enum Difficulty {
   Normal = "Normal",
 }
 
+export enum Lang {
+  en = "English",
+  de = "German",
+}
+
 export type GridIndex = number;
 
 export type GridItem = Mark | GridIndex;

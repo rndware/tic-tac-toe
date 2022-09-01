@@ -5,6 +5,8 @@ import { store } from "./app/store";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+import "./app/i18n";
 import "./index.scss";
 
 const container = document.getElementById("root")!;

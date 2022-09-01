@@ -25,5 +25,24 @@ const Template: ComponentStory<typeof SettingsForm> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  copy: {
+    title: "Settings",
+    difficulty: {
+      label: "Game Difficulty",
+      options: {
+        easy: "Easy",
+        normal: "Normal",
+        hard: "Hard",
+      },
+    },
+    lang: {
+      label: "Language",
+      options: {
+        en: "English",
+        de: "German",
+      },
+    },
+    done: "Done",
+  },
   difficulty: Difficulty.Easy,
 };

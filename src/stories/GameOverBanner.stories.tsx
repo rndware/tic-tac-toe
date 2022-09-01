@@ -23,9 +23,16 @@ const Template: ComponentStory<typeof GameOverBanner> = (args) => (
   </div>
 );
 
+const copy = {
+  draw: "Game Over, Draw.",
+  restart: "Restart",
+  quit: "Quit",
+};
+
 export const Draw = Template.bind({});
 Draw.args = {
   gameMode: Mode.Ended,
+  copy,
 };
 
 const humanPlayer: Player = {
@@ -44,12 +51,20 @@ const computerPlayer: Player = {
 
 export const PlayerWins = Template.bind({});
 PlayerWins.args = {
+  copy: {
+    ...copy,
+    winner: `Game Over, "${humanPlayer.name}" has won.`,
+  },
   gameMode: Mode.Ended,
   winningPlayer: humanPlayer,
 };
 
 export const ComputerWins = Template.bind({});
 ComputerWins.args = {
+  copy: {
+    ...copy,
+    winner: `Game Over, "${computerPlayer.name}" has won.`,
+  },
   gameMode: Mode.Ended,
   winningPlayer: computerPlayer,
 };

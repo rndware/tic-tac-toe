@@ -1,14 +1,17 @@
 import React from "react";
 
 import Typography from "@mui/material/Typography";
+import { useTranslation } from "react-i18next";
 import StarBackground from "../../components/star-background";
 
 const NotFound = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="NotFoundPage">
       <StarBackground />
       <Typography variant="h3" component="h3">
-        Page not found... Lost in space...
+        {t("notFoundPage.description")}
       </Typography>
     </div>
   );
