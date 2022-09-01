@@ -16,7 +16,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Storybook component explorer integration
 - Optimised component rendering using `React.memo`
     - Higher memory / fast speed strategy
-    - [stackoverflow](https://stackoverflow.com/questions/53074551/when-should-you-not-use-react-memo) for fruther info
+    - [stackoverflow](https://stackoverflow.com/questions/53074551/when-should-you-not-use-react-memo) for further info
 - Partially responsive
 
 ## TO-DO
