@@ -5,7 +5,11 @@ import { GridItem, Mark } from "../../types/game";
 
 import styles from "./MarkIcon.module.scss";
 
-function getMaterialIcon(props: { value: GridItem }) {
+interface MarkProps {
+  value: GridItem;
+}
+
+const getMaterialIcon = (props: MarkProps) => {
   if (props.value === Mark.o) {
     return (
       <CircleOutlinedIcon
@@ -27,10 +31,10 @@ function getMaterialIcon(props: { value: GridItem }) {
   } else {
     return <div data-testid="mark-icon-empty" className="MarkIcon__empty" />;
   }
-}
+};
 
-function MarkIcon(props: { value: GridItem }) {
-  return <div className={styles.MarkIcon}>{getMaterialIcon(props)}</div>;
-}
+const MarkIcon = (props: MarkProps) => (
+  <div className={styles.MarkIcon}>{getMaterialIcon(props)}</div>
+);
 
 export default React.memo(MarkIcon);

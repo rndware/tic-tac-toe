@@ -8,13 +8,15 @@ A simple Tic Tac Toe game built using Create React App.
 
 - Written in React/Redux/Typescript
 - Use of functional components where possible
-- Optimised component rendering using `React.memo`
 - Unit tested with BDD where possible
 - Styled using Sass modules with BEM syntax
 - Used Material UI for icons / inputs and buttons
 - Decoupled board from game logic
 - Undo button to replay interactions using board history
 - Storybook component explorer integration
+- Optimised component rendering using `React.memo`
+    - Higher memory / fast speed strategy
+    - [stackoverflow](https://stackoverflow.com/questions/53074551/when-should-you-not-use-react-memo) for fruther info
 - Partially responsive
 
 ## TO-DO

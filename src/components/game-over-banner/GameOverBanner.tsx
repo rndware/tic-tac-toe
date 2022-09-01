@@ -14,15 +14,15 @@ interface PlayerFormProps {
   onQuit: () => void;
 }
 
-function renderBannerText(winningPlayer: Player | null) {
+const renderBannerText = (winningPlayer: Player | null) => {
   if (winningPlayer) {
     return `Game Over, "${winningPlayer.name}" has won.`;
   } else {
     return `Game Over, Draw.`;
   }
-}
+};
 
-function GameOverBanner(props: PlayerFormProps) {
+const GameOverBanner = (props: PlayerFormProps) => {
   return (
     <div
       data-testid="game-over"
@@ -44,6 +44,6 @@ function GameOverBanner(props: PlayerFormProps) {
       </div>
     </div>
   );
-}
+};
 
 export default React.memo(GameOverBanner);

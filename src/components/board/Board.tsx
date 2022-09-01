@@ -53,7 +53,7 @@ const MemoWrapper = React.memo(
   }
 );
 
-function Board(props: BoardProps) {
+const Board = (props: BoardProps) => {
   const size = props.gridSize || gridSize;
 
   const chunckedArray: GridData[] = chunkArray(props.gridData, size);
@@ -86,6 +86,6 @@ function Board(props: BoardProps) {
       </table>
     </div>
   );
-}
+};
 
 export default React.memo(Board);

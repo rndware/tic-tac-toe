@@ -2,7 +2,12 @@ import React from "react";
 import Button from "@mui/material/Button";
 import styles from "./GameControls.module.scss";
 
-function GameControls(props: { onUndo: (e: any) => void; disabled: boolean }) {
+interface GameControlProps {
+  onUndo: (e: any) => void;
+  disabled: boolean;
+}
+
+const GameControls = (props: GameControlProps) => {
   return (
     <div className={styles.GameControls}>
       <Button
@@ -14,6 +19,6 @@ function GameControls(props: { onUndo: (e: any) => void; disabled: boolean }) {
       </Button>
     </div>
   );
-}
+};
 
 export default React.memo(GameControls);

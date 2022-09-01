@@ -14,7 +14,7 @@ interface BoardCellProps {
   highlightColor?: HighlightColors | null;
 }
 
-function BoardCell(props: BoardCellProps) {
+const BoardCell = (props: BoardCellProps) => {
   const fullId = props.id ? `board-cell-${props.id}` : undefined;
   return (
     <div
@@ -30,6 +30,6 @@ function BoardCell(props: BoardCellProps) {
       <MarkIcon value={props.value} />
     </div>
   );
-}
+};
 
 export default React.memo(BoardCell);

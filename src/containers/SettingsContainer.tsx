@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { setDifficulty, getDifficulty } from "../reducers/SettingsSlice";
 import SettingsForm from "../components/settings-form";
 
-export default function SettingsContainer() {
+const SettingsContainer = () => {
   const dispatch = useAppDispatch();
 
   return (
@@ -12,4 +12,6 @@ export default function SettingsContainer() {
       onDifficultyChange={(e) => dispatch(setDifficulty(e.target.value))}
     />
   );
-}
+};
+
+export default SettingsContainer;

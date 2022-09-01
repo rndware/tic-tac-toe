@@ -63,9 +63,9 @@ const mapDispatchToProps = (dispatch: AppDispatch) => {
   };
 };
 
-function mapStateToProps(state: RootState) {
+const mapStateToProps = (state: RootState) => {
   const game: Game = state.game;
   return { gameMode: game.mode, winningPlayer: game.winningPlayer };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavWrapper);

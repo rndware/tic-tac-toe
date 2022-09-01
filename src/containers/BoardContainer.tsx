@@ -9,7 +9,7 @@ import {
   getBoardHighlightColor,
 } from "../reducers/BoardSlice";
 
-export default function BoardContainer() {
+const BoardContainer = () => {
   const dispatch = useAppDispatch();
 
   return (
@@ -21,4 +21,6 @@ export default function BoardContainer() {
       onClick={(_, index) => dispatch(playMove(index))}
     />
   );
-}
+};
+
+export default BoardContainer;

@@ -5,7 +5,7 @@ import { getGameMode } from "../reducers/GameSlice";
 import { undoInteraction } from "../reducers/GameSlice";
 import { Mode } from "../types/game";
 
-export default function GameControlsContainer() {
+const GameControlsContainer = () => {
   const dispatch = useAppDispatch();
 
   return (
@@ -14,4 +14,6 @@ export default function GameControlsContainer() {
       disabled={useAppSelector(getGameMode) === Mode.Ended}
     />
   );
-}
+};
+
+export default GameControlsContainer;
