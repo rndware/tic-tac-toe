@@ -30,13 +30,11 @@ const renderSelectOptions = (
   enumOptions: enumMap,
   options: Options
 ) =>
-  (Object.keys(enumOptions) as Array<keyof typeof enumOptions>).map(
-    (value: string | number) => (
-      <MenuItem key={`${key}-options-item-${value}`} value={value}>
-        {options[value.toString().toLowerCase()]}
-      </MenuItem>
-    )
-  );
+  Object.keys(enumOptions).map((value: string) => (
+    <MenuItem key={`${key}-options-item-${value}`} value={value}>
+      {options[value.toString().toLowerCase()]}
+    </MenuItem>
+  ));
 
 interface FormControlData {
   key: string;
