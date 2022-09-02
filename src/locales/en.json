@@ -1,0 +1,37 @@
+{
+  "settingsPage": {
+    "title": "Settings",
+    "difficulty": {
+      "label": "Game Difficulty",
+      "options": {
+        "easy": "Easy",
+        "normal": "Normal",
+        "hard": "Hard"
+      }
+    },
+    "lang": {
+      "label": "Language",
+      "options": {
+        "en": "English",
+        "de": "German"
+      }
+    },
+    "done": "Done"
+  },
+  "introPage": {
+    "title": "Tic Tac Toe",
+    "description": "A long time ago in a galaxy far, far away...",
+    "startGame": "Start Game",
+    "options": "Options"
+  },
+  "gamePage": {
+    "winner": "Game Over, \"{{name}}\" has won.",
+    "draw": "Game Over, Draw.",
+    "restart": "Restart",
+    "quit": "Quit",
+    "undo": "Undo"
+  },
+  "notFoundPage": {
+    "description": "Page not found... Lost in space..."
+  }
+}

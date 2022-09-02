@@ -17,10 +17,18 @@ describe("GameOverBanner", () => {
     color: HighlightColors.red,
   };
 
+  const copy = {
+    winner: `Game Over, "${player.name}" has won.`,
+    draw: "Game Over, Draw.",
+    restart: "Restart",
+    quit: "Quit",
+  };
+
   describe("the game has ended and the banner is shown to player", () => {
     it("should fade in", () => {
       const query = render(
         <GameOverBanner
+          copy={copy}
           gameMode={Mode.Ended}
           winningPlayer={player}
           onRestart={() => {}}
@@ -36,6 +44,7 @@ describe("GameOverBanner", () => {
     it("should display game over win message with player name if won", () => {
       const query = render(
         <GameOverBanner
+          copy={copy}
           gameMode={Mode.Ended}
           winningPlayer={player}
           onRestart={() => {}}
@@ -51,6 +60,7 @@ describe("GameOverBanner", () => {
     it("should display game over draw message if a draw", () => {
       const query = render(
         <GameOverBanner
+          copy={copy}
           gameMode={Mode.Ended}
           winningPlayer={null}
           onRestart={() => {}}
@@ -68,6 +78,7 @@ describe("GameOverBanner", () => {
 
       render(
         <GameOverBanner
+          copy={copy}
           gameMode={Mode.Ended}
           winningPlayer={null}
           onRestart={handleClick}
@@ -84,6 +95,7 @@ describe("GameOverBanner", () => {
 
       render(
         <GameOverBanner
+          copy={copy}
           gameMode={Mode.Ended}
           winningPlayer={null}
           onRestart={() => {}}

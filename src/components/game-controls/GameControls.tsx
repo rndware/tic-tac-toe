@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import styles from "./GameControls.module.scss";
+import { I18nCopy } from "../../types/app";
 
 interface GameControlProps {
+  copy: I18nCopy;
   onUndo: (e: any) => void;
   disabled: boolean;
 }
@@ -15,7 +17,7 @@ const GameControls = (props: GameControlProps) => {
         variant="contained"
         disabled={props.disabled}
       >
-        Undo
+        {props.copy.undo}
       </Button>
     </div>
   );

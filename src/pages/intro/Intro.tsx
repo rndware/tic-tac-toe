@@ -2,10 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useTranslation } from "react-i18next";
 import StarBackground from "../../components/star-background";
 import styles from "./Intro.module.scss";
 
 const Intro = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.IntroPage}>
       <StarBackground />
@@ -14,18 +17,18 @@ const Intro = () => {
         variant="h1"
         component="h1"
       >
-        Tic Tac Toe
+        {t("introPage.title")}
       </Typography>
       <div className={styles.IntroPage__content}>
         <Typography className={styles.IntroPage__desc} component="p">
-          A long time ago in a galaxy far, far away...
+          {t("introPage.description")}
         </Typography>
         <div className={styles.IntroPage__buttonContainer}>
           <Button variant="contained" component={Link} to={"/game"}>
-            Start Game
+            {t("introPage.startGame")}
           </Button>
           <Button color="secondary" component={Link} to={"/settings"}>
-            Options
+            {t("introPage.options")}
           </Button>
         </div>
       </div>

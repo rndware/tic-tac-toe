@@ -3,24 +3,18 @@ import Typography from "@mui/material/Typography";
 import classNames from "classnames";
 import { Mode } from "../../types/game";
 import { Player } from "../../types/player";
+import { I18nCopy } from "../../types/app";
 import Button from "@mui/material/Button";
 
 import styles from "./GameOverBanner.module.scss";
 
 interface PlayerFormProps {
+  copy: I18nCopy;
   gameMode: Mode;
   winningPlayer: Player | null;
   onRestart: () => void;
   onQuit: () => void;
 }
-
-const renderBannerText = (winningPlayer: Player | null) => {
-  if (winningPlayer) {
-    return `Game Over, "${winningPlayer.name}" has won.`;
-  } else {
-    return `Game Over, Draw.`;
-  }
-};
 
 const GameOverBanner = (props: PlayerFormProps) => {
   return (
@@ -32,14 +26,14 @@ const GameOverBanner = (props: PlayerFormProps) => {
       })}
     >
       <Typography variant="h3" component="h3">
-        {renderBannerText(props.winningPlayer)}
+        {props.winningPlayer ? props.copy.winner : props.copy.draw}
       </Typography>
       <div className={styles.GameOverBanner__buttonContainer}>
         <Button onClick={props.onRestart} variant="contained">
-          Restart
+          {props.copy.restart}
         </Button>
         <Button onClick={props.onQuit} color="secondary">
-          Quit
+          {props.copy.quit}
         </Button>
       </div>
     </div>
