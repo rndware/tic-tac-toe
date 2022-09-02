@@ -14,6 +14,7 @@ import GameOverBanner from "../components/game-over-banner/GameOverBanner";
 import styles from "./GameContainer.module.scss";
 
 interface GameContainerProps {
+  // TO-DO: create better type for 't'
   t: (key: string, object: {}) => I18nCopy;
   startGame: () => void;
   winningPlayer: Player | null;
@@ -23,13 +24,13 @@ interface GameContainerProps {
 
 type HookWrapperProps = Omit<GameContainerProps, "navigation" | "t">;
 
-// GameContainer wrap with useNavigate and useTranslation hook
-function HookWrapper(props: HookWrapperProps) {
+// Class component doesn't support hooks so use HOC
+const HookWrapper = (props: HookWrapperProps) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
   return <GameContainer {...props} navigation={navigate} t={t} />;
-}
+};
 
 class GameContainer extends React.Component<GameContainerProps> {
   componentDidMount(): void {

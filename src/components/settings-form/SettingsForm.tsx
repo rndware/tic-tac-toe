@@ -8,6 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
+import { defaultLang } from "../../const/i18n";
 import { I18nCopy } from "../../types/app";
 import { Difficulty, Lang } from "../../types/game";
 
@@ -70,7 +71,7 @@ const renderFormControls = (formControls: FormControlData[]) => {
 
 const SettingsForm = (props: SettingsFormProps) => {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(defaultLang);
 
   const handleLangChange = (e: any) => {
     const lang = e.target.value;

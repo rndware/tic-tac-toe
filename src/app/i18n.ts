@@ -1,6 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+import { defaultLang } from "../const/i18n";
+
 import en from "../locales/en.json";
 import de from "../locales/de.json";
 
@@ -15,8 +17,8 @@ i18n
         translation: de,
       },
     },
-    lng: "en",
-    fallbackLng: "en",
+    lng: defaultLang,
+    fallbackLng: defaultLang,
 
     interpolation: {
       escapeValue: false,
