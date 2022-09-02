@@ -9,18 +9,16 @@ interface GameControlProps {
   disabled: boolean;
 }
 
-const GameControls = (props: GameControlProps) => {
-  return (
-    <div className={styles.GameControls}>
-      <Button
-        onClick={props.onUndo}
-        variant="contained"
-        disabled={props.disabled}
-      >
-        {props.copy.undo}
-      </Button>
-    </div>
-  );
-};
+const GameControls = (props: GameControlProps) => (
+  <div className={styles.GameControls}>
+    <Button
+      onClick={props.onUndo}
+      variant="contained"
+      disabled={props.disabled}
+    >
+      {props.copy.undo}
+    </Button>
+  </div>
+);
 
 export default React.memo(GameControls);
