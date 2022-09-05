@@ -12,25 +12,23 @@ import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme";
 
-function App() {
-  return (
-    <div className="App">
-      <ThemeProvider theme={appTheme}>
-        <main className="App__main">
-          <Container fixed>
-            <Routes>
-              <Route path="/" element={<Intro />} />
-              <Route path="/intro" element={<Intro />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/setup" element={<Setup />} />
-              <Route path="/game" element={<Game />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Container>
-        </main>
-      </ThemeProvider>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <ThemeProvider theme={appTheme}>
+      <main className="App__main">
+        <Container fixed>
+          <Routes>
+            <Route path="/" element={<Intro />} />
+            <Route path="/intro" element={<Intro />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/setup" element={<Setup />} />
+            <Route path="/game" element={<Game />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Container>
+      </main>
+    </ThemeProvider>
+  </div>
+);
 
 export default App;

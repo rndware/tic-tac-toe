@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { Difficulty, Lang } from "../types/game";
 import { I18nCopy } from "../types/app";
@@ -19,6 +19,10 @@ const SettingsContainer = () => {
     setLanguage(lang);
     i18n.changeLanguage(lang);
   };
+
+  useEffect(() => {
+    document.getElementsByTagName("html")[0].setAttribute("lang", language);
+  }, [language]);
 
   const settingsCopy: I18nCopy = t("settingsPage", { returnObjects: true });
 
