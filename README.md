@@ -7,7 +7,7 @@ A simple Tic Tac Toe game built using Create React App.
 ## Highlights
 
 - Written in React/Redux/Typescript
-- Use of functional components where possible
+- Use of functional and 'dumb' components where possible
 - Unit tested with BDD where possible
 - Styled using Sass modules with BEM syntax
 - Used Material UI for icons, inputs and buttons
