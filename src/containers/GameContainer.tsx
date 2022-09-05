@@ -18,9 +18,10 @@ const GameContainer = () => {
 
   const gameMode = useAppSelector(getGameMode);
   const winningPlayer = useAppSelector(getWinningPlayer);
-  const start = () => dispatch(startGame());
 
-  useEffect(() => start(), []);
+  useEffect(() => {
+    dispatch(startGame());
+  }, [dispatch]);
 
   return (
     <div className={styles.GameContainer}>
@@ -44,7 +45,7 @@ const GameContainer = () => {
           })}
           gameMode={gameMode}
           winningPlayer={winningPlayer}
-          onRestart={start}
+          onRestart={() => dispatch(startGame())}
           onQuit={() => navigate("/")}
         />
       )}
