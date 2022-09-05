@@ -20,9 +20,7 @@ const GameContainer = () => {
   const winningPlayer = useAppSelector(getWinningPlayer);
   const start = () => dispatch(startGame());
 
-  useEffect(() => {
-    start();
-  }, []);
+  useEffect(() => start(), []);
 
   return (
     <div className={styles.GameContainer}>

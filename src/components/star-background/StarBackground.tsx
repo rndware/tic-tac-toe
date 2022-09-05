@@ -26,4 +26,4 @@ const StarBackground = () => (
   </>
 );
 
-export default StarBackground;
+export default React.memo(StarBackground);
