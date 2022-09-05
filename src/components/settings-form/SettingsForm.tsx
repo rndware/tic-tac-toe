@@ -42,8 +42,8 @@ export interface FormControlData {
   options: Options;
 }
 
-const renderFormControls = (formControls: FormControlData[]) => {
-  return formControls.map((item: FormControlData) => (
+const renderFormControls = (formControls: FormControlData[]) =>
+  formControls.map((item: FormControlData) => (
     <div
       key={`form-control-item-${item.key}`}
       className={styles.SettingsForm__formControl}
@@ -63,25 +63,22 @@ const renderFormControls = (formControls: FormControlData[]) => {
       </FormControl>
     </div>
   ));
-};
 
-const SettingsForm = (props: SettingsFormProps) => {
-  return (
-    <form className={styles.SettingsForm} noValidate autoComplete="off">
-      {renderFormControls(props.formControls)}
-      <div className={styles.SettingsForm__controls}>
-        <Button
-          type="submit"
-          color="primary"
-          variant="contained"
-          component={Link}
-          to={"/"}
-        >
-          {props.copy.done}
-        </Button>
-      </div>
-    </form>
-  );
-};
+const SettingsForm = (props: SettingsFormProps) => (
+  <form className={styles.SettingsForm} noValidate autoComplete="off">
+    {renderFormControls(props.formControls)}
+    <div className={styles.SettingsForm__controls}>
+      <Button
+        type="submit"
+        color="primary"
+        variant="contained"
+        component={Link}
+        to={"/"}
+      >
+        {props.copy.done}
+      </Button>
+    </div>
+  </form>
+);
 
 export default SettingsForm;

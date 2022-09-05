@@ -37,4 +37,5 @@ const GameOverBanner = (props: PlayerFormProps) => (
     </div>
   </div>
 );
+
 export default GameOverBanner;
