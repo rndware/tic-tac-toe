@@ -37,4 +37,4 @@ const MarkIcon = (props: MarkProps) => (
   <div className={styles.MarkIcon}>{getMaterialIcon(props)}</div>
 );
 
-export default React.memo(MarkIcon);
+export default MarkIcon;

@@ -155,5 +155,7 @@ export const playMove = createAsyncThunk<void, number, { state: RootState }>(
 export const getGameMode = (state: RootState): Mode => state.game.mode;
 export const getPlayingMove = (state: RootState): Mode =>
   state.game.playingMove;
+export const getWinningPlayer = (state: RootState): Player =>
+  state.game.winningPlayer;
 
 export default gameSlice.reducer;

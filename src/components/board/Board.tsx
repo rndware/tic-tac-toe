@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import { HighlightColors } from "../../types/player";
 import { GridIndex, GridData, GridItem } from "../../types/game";
@@ -46,13 +46,6 @@ const BoardRow = (props: BoardRowProps) => (
   </tr>
 );
 
-const MemoWrapper = React.memo(
-  BoardRow,
-  (prevProps: BoardRowProps, nextProps: BoardRowProps) => {
-    return prevProps.gridItems === nextProps.gridItems;
-  }
-);
-
 const Board = (props: BoardProps) => {
   const size = props.gridSize || gridSize;
 
@@ -70,7 +63,7 @@ const Board = (props: BoardProps) => {
       >
         <tbody>
           {chunckedArray.map((gridItems: GridItem[], indexRow: GridIndex) => (
-            <MemoWrapper
+            <BoardRow
               gridSize={size}
               gridItems={gridItems}
               indexRow={indexRow}
@@ -88,4 +81,4 @@ const Board = (props: BoardProps) => {
   );
 };
 
-export default React.memo(Board);
+export default Board;

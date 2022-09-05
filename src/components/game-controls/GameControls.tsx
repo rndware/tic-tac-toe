@@ -21,4 +21,4 @@ const GameControls = (props: GameControlProps) => (
   </div>
 );
 
-export default React.memo(GameControls);
+export default GameControls;

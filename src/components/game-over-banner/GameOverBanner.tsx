@@ -40,4 +40,4 @@ const GameOverBanner = (props: PlayerFormProps) => {
   );
 };
 
-export default React.memo(GameOverBanner);
+export default GameOverBanner;

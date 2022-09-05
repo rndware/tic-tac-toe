@@ -84,4 +84,4 @@ const SettingsForm = (props: SettingsFormProps) => {
   );
 };
 
-export default React.memo(SettingsForm);
+export default SettingsForm;

@@ -32,4 +32,4 @@ const BoardCell = (props: BoardCellProps) => {
   );
 };
 
-export default React.memo(BoardCell);
+export default BoardCell;
