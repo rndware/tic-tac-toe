@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Difficulty, Lang } from "../types/game";
 import SettingsForm from "../components/settings-form";
-import { Difficulty } from "../types/game";
 
 import "./story.css";
 
@@ -24,25 +24,45 @@ const Template: ComponentStory<typeof SettingsForm> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  copy: {
-    title: "Settings",
-    difficulty: {
-      label: "Game Difficulty",
-      options: {
-        easy: "Easy",
-        normal: "Normal",
-        hard: "Hard",
-      },
+
+const copy = {
+  title: "Settings",
+  difficulty: {
+    label: "Game Difficulty",
+    options: {
+      easy: "Easy",
+      normal: "Normal",
+      hard: "Hard",
     },
-    lang: {
-      label: "Language",
-      options: {
-        en: "English",
-        de: "German",
-      },
-    },
-    done: "Done",
   },
-  difficulty: Difficulty.Easy,
+  lang: {
+    label: "Language",
+    options: {
+      en: "English",
+      de: "German",
+    },
+  },
+  done: "Done",
+};
+
+Default.args = {
+  copy,
+  formControls: [
+    {
+      key: "difficulty",
+      copy: copy.difficulty,
+      value: Difficulty.Easy,
+      enum: Difficulty,
+      onChange: (e: any) => {},
+      options: copy.difficulty.options,
+    },
+    {
+      key: "lang",
+      copy: copy.lang,
+      value: "en",
+      enum: Lang,
+      onChange: (e: any) => {},
+      options: copy.lang.options,
+    },
+  ],
 };
