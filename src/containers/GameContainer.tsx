@@ -19,7 +19,7 @@ const GameContainer = () => {
   const gameMode = useAppSelector(getGameMode);
   const winningPlayer = useAppSelector(getWinningPlayer);
 
-  // monitor 'dispatch' to avoid warning empty array warning
+  // monitor 'dispatch' to avoid empty array warning
   useEffect(() => {
     dispatch(startGame());
   }, [dispatch]);
