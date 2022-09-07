@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import cloneDeep from "lodash/cloneDeep";
 import { RootState } from "../app/store";
-import { GridData } from "../types/game";
+import { GridData } from "../types/grid";
 import { Player } from "../types/player";
 
 interface MarkRecord {

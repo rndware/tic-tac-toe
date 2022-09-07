@@ -34,21 +34,39 @@ describe("history reducer", () => {
     );
   });
 
-  it("should record mark histroy", () => {
-    expect(
-      historyReducer(
-        initialState,
-        recordMarkHistory({
-          player: computerPlayer,
+  describe("record mark history", () => {
+    it("should record mark along with player", () => {
+      expect(
+        historyReducer(
+          initialState,
+          recordMarkHistory({
+            player: computerPlayer,
+            boardSnapshot: moveOneSnapshot,
+          })
+        ).marksRecord
+      ).toEqual([
+        {
+          madeBy: computerPlayer,
           boardSnapshot: moveOneSnapshot,
-        })
-      ).marksRecord
-    ).toEqual([
-      {
-        madeBy: computerPlayer,
-        boardSnapshot: moveOneSnapshot,
-      },
-    ]);
+        },
+      ]);
+    });
+
+    it("should record mark without player", () => {
+      expect(
+        historyReducer(
+          initialState,
+          recordMarkHistory({
+            player: undefined,
+            boardSnapshot: moveOneSnapshot,
+          })
+        ).marksRecord
+      ).toEqual([
+        {
+          boardSnapshot: moveOneSnapshot,
+        },
+      ]);
+    });
   });
 
   it("should revert last interaction consisting of a humand and computer's last made marks", () => {
