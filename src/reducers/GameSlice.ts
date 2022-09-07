@@ -1,5 +1,5 @@
 import { Mode, Winner } from "../types/game";
-import { isGridIndex, GridIndex } from "../types/grid";
+import { isGridIndex, GridIndex, GridData } from "../types/grid";
 import GameService from "../services/GameService";
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "../app/store";
@@ -90,6 +90,10 @@ export const undoInteraction = (): AppThunk => (dispatch, getState) => {
   }
 };
 
+function freeToMarkAtIndex(markedGrid: GridData, index: GridIndex): boolean {
+  return isGridIndex(markedGrid[index]);
+}
+
 // TO-DO: reduce number of dispatch calls for optimisation
 export const playMove = createAsyncThunk<void, number, { state: RootState }>(
   "game/playMove",
@@ -104,7 +108,7 @@ export const playMove = createAsyncThunk<void, number, { state: RootState }>(
     const playingMove = getPlayingMove(firstState);
 
     if (
-      !isGridIndex(markedGrid[index]) ||
+      !freeToMarkAtIndex(markedGrid, index) ||
       mode !== Mode.Playing ||
       playingMove
     ) {
