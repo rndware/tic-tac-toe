@@ -1,7 +1,7 @@
 import React, { MouseEvent } from "react";
 import classNames from "classnames";
 import { HighlightColors } from "../../types/player";
-import { GridIndex, GridData, GridItem } from "../../types/game";
+import { GridIndex, GridData, GridItem } from "../../types/grid";
 import { chunkArray } from "../../utils";
 import { gridSize } from "../../const/gridData";
 import BoardCell from "../board-cell";

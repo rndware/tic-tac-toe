@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Mark, GridIndex, GridData, HighlightedIndexs } from "../types/game";
+import { Mark } from "../types/game";
+import { HighlightedIndexs, GridIndex, GridData } from "../types/grid";
 import { HighlightColors } from "../types/player";
 import { RootState } from "../app/store";
 import { range } from "../utils";

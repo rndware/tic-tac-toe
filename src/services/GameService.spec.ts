@@ -1,4 +1,5 @@
-import { Difficulty, GridData, Mark, Winner } from "../types/game";
+import { Difficulty, Mark, Winner } from "../types/game";
+import { GridData } from "../types/grid";
 import { HighlightColors, Player } from "../types/player";
 import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
 import gameService from "./GameService";

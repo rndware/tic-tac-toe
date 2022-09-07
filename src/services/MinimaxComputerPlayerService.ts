@@ -1,5 +1,6 @@
 import Minimax from "tic-tac-toe-minimax";
-import { Difficulty, Mark, GridData, Winner } from "../types/game";
+import { Difficulty, Mark, Winner } from "../types/game";
+import { GridData } from "../types/grid";
 
 interface NextGameState {
   winner: Winner | null;

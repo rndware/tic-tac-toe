@@ -1,7 +1,8 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import { GridItem, Mark } from "../../types/game";
+import { Mark } from "../../types/game";
+import { GridItem } from "../../types/grid";
 
 import styles from "./MarkIcon.module.scss";
 

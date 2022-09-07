@@ -3,7 +3,8 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Board from "../components/board";
 import { range } from "../utils";
 import { gridSize } from "../const/gridData";
-import { GridItem, Mark } from "../types/game";
+import { Mark } from "../types/game";
+import { GridItem } from "../types/grid";
 import { diagnalIndexes } from "../const/gridData";
 import { HighlightColors } from "../types/player";
 

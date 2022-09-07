@@ -1,6 +1,6 @@
 import React, { MouseEvent } from "react";
 import classNames from "classnames";
-import { GridIndex, GridItem } from "../../types/game";
+import { GridIndex, GridItem } from "../../types/grid";
 import { HighlightColors } from "../../types/player";
 import MarkIcon from "../mark-icon";
 

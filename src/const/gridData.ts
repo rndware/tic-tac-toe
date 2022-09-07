@@ -1,4 +1,4 @@
-import { GridIndex } from "../types/game";
+import { GridIndex } from "../types/grid";
 
 export const gridSize = 3;
 
