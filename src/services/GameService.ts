@@ -1,4 +1,5 @@
-import { Difficulty, GridData, GridIndex, Winner } from "../types/game";
+import { Difficulty, Winner } from "../types/game";
+import { GridData, GridIndex } from "../types/grid";
 import { sleep } from "../utils";
 import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
 import { rowIndexes, columnIndexes, diagnalIndexes } from "../const/gridData";

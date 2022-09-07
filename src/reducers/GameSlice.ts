@@ -1,4 +1,5 @@
-import { Mode, Winner, isGridIndex, GridIndex } from "../types/game";
+import { Mode, Winner } from "../types/game";
+import { isGridIndex, GridIndex } from "../types/grid";
 import GameService from "../services/GameService";
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "../app/store";
