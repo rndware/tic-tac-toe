@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import classNames from "classnames";
 import { GridIndex, GridItem } from "../../types/game";
 import { HighlightColors } from "../../types/player";
@@ -9,7 +9,7 @@ import styles from "./BoardCell.module.scss";
 interface BoardCellProps {
   id?: GridIndex;
   value: GridItem;
-  onClick: (e: any) => void;
+  onClick: (e: MouseEvent) => void;
   isHighlighted?: boolean;
   highlightColor?: HighlightColors | null;
 }

@@ -2,7 +2,6 @@ import { Difficulty, GridData, GridIndex, Winner } from "../types/game";
 import { sleep } from "../utils";
 import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
 import { rowIndexes, columnIndexes, diagnalIndexes } from "../const/gridData";
-import { GridItem } from "../types/game";
 import { Player } from "../types/player";
 
 export default class gameService {
@@ -49,17 +48,17 @@ export default class gameService {
     }
   }
 
-  getWinningLine(gridData: GridData): GridIndex[] {
+  getWinningLine(markedGrid: GridData): GridIndex[] {
     const allIndexes = [rowIndexes, columnIndexes, diagnalIndexes];
 
-    let winningLine: GridItem[] = [];
+    let winningLine: GridIndex[] = [];
 
     for (let directionIndexs of allIndexes) {
       for (let lineIndexes of directionIndexs) {
         if (
           lineIndexes.every(
-            (index: GridItem) =>
-              gridData[index as number] === this.getWinningPlayer()?.mark
+            (index: GridIndex) =>
+              markedGrid[index] === this.getWinningPlayer()?.mark
           )
         ) {
           winningLine = lineIndexes;
@@ -70,6 +69,6 @@ export default class gameService {
       }
     }
 
-    return winningLine as GridIndex[];
+    return winningLine;
   }
 }

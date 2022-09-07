@@ -37,3 +37,13 @@ export type HighlightedIndexs = GridIndex[];
 export function isGridIndex(gridItem: GridItem): gridItem is GridIndex {
   return typeof gridItem === "number";
 }
+
+export function isDifficultyEnumKey(
+  key: string
+): key is keyof typeof Difficulty {
+  if (key in Difficulty) {
+    return true;
+  } else {
+    return false;
+  }
+}

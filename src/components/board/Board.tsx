@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import classNames from "classnames";
 import { HighlightColors } from "../../types/player";
 import { GridIndex, GridData, GridItem } from "../../types/game";
@@ -15,7 +15,7 @@ interface BoardProps {
   gridData: GridData;
   highlighted?: GridIndex[];
   highlightColor?: HighlightColors;
-  onClick: (e: any, index: GridIndex) => void;
+  onClick: (e: MouseEvent, index: GridIndex) => void;
 }
 
 interface BoardRowProps {
@@ -24,7 +24,7 @@ interface BoardRowProps {
   indexRow: GridIndex;
   highlighted?: GridIndex[];
   highlightColor?: HighlightColors;
-  onClick: (e: any, index: GridIndex) => void;
+  onClick: (e: MouseEvent, index: GridIndex) => void;
 }
 
 const BoardRow = (props: BoardRowProps) => (
@@ -38,7 +38,7 @@ const BoardRow = (props: BoardRowProps) => (
             value={gridItem}
             isHighlighted={props.highlighted?.includes(flatIndex)}
             highlightColor={props.highlightColor}
-            onClick={(e: any) => props.onClick(e, flatIndex)}
+            onClick={(e: MouseEvent) => props.onClick(e, flatIndex)}
           />
         </td>
       );
@@ -69,7 +69,7 @@ const Board = (props: BoardProps) => {
               indexRow={indexRow}
               highlighted={props.highlighted}
               highlightColor={props.highlightColor}
-              onClick={(e: any, index: GridIndex) =>
+              onClick={(e: MouseEvent, index: GridIndex) =>
                 !props.disabled && props.onClick(e, index)
               }
               key={`row-item-${indexRow}`}

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
@@ -38,7 +39,7 @@ export interface FormControlData {
   copy: I18nCopy;
   value: string;
   enum: enumMap;
-  onChange: (e: any) => void;
+  onChange: (e: SelectChangeEvent<string>) => void;
   options: Options;
 }
 

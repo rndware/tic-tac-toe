@@ -1,7 +1,9 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Difficulty, Lang } from "../types/game";
+
+import { SelectChangeEvent } from "@mui/material/Select";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SettingsForm from "../components/settings-form";
 
 import "./story.css";
@@ -53,7 +55,7 @@ Default.args = {
       copy: copy.difficulty,
       value: Difficulty.Easy,
       enum: Difficulty,
-      onChange: (e: any) => {},
+      onChange: (_: SelectChangeEvent<string>) => {},
       options: copy.difficulty.options,
     },
     {
@@ -61,7 +63,7 @@ Default.args = {
       copy: copy.lang,
       value: "en",
       enum: Lang,
-      onChange: (e: any) => {},
+      onChange: (_: SelectChangeEvent<string>) => {},
       options: copy.lang.options,
     },
   ],
