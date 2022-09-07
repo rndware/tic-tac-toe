@@ -35,7 +35,7 @@ describe("history reducer", () => {
   });
 
   describe("record mark history", () => {
-    it("should record mark along with player", () => {
+    it("should record mark along with player who made it", () => {
       expect(
         historyReducer(
           initialState,
@@ -52,7 +52,7 @@ describe("history reducer", () => {
       ]);
     });
 
-    it("should record mark without player", () => {
+    it("should record mark without player info", () => {
       expect(
         historyReducer(
           initialState,
