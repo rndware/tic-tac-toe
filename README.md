@@ -2,7 +2,6 @@
 
 A simple Tic Tac Toe game built using Create React App.
 
-
 <img src="https://github.com/rndware/tic-tac-toe/blob/master/media/playing.gif" width="65%"/>
 </br>
 <img src="https://github.com/rndware/tic-tac-toe/blob/master/media/playing2.gif" width="65%"/>
@@ -15,6 +14,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Styled using Sass modules with BEM syntax
 - Used Material UI for icons, inputs and buttons
 - Decoupled board from game logic
+- Use of services to decouple AI logic from slices
 - I18n in English and German
 - Undo button to replay interactions using board history
 - Storybook component explorer integration
