@@ -2,7 +2,10 @@
 
 A simple Tic Tac Toe game built using Create React App.
 
+
 <img src="https://github.com/rndware/tic-tac-toe/blob/master/media/playing.gif" width="65%"/>
+</br>
+<img src="https://github.com/rndware/tic-tac-toe/blob/master/media/playing2.gif" width="65%"/>
 
 ## Highlights
 
@@ -23,6 +26,7 @@ A simple Tic Tac Toe game built using Create React App.
 - Unit test all remaining modules
 - ~~Add in `classnames` for class toggling~~
 - Reduce number of dispatch calls in `"game/playMove"` Thunk
+- Create a per region config file to replace static const data
 - Make game service no longer global in module
 - Create util for toggling element modifier e.g. `--highlight`
 - ~~Add storybook with full component coverage~~
