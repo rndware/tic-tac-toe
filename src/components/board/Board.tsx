@@ -64,6 +64,7 @@ const Board = (props: BoardProps) => {
         <tbody>
           {chunckedArray.map((gridItems: GridItem[], indexRow: GridIndex) => (
             <BoardRow
+              key={`row-item-${indexRow}`}
               gridSize={size}
               gridItems={gridItems}
               indexRow={indexRow}
@@ -72,7 +73,6 @@ const Board = (props: BoardProps) => {
               onClick={(e: MouseEvent, index: GridIndex) =>
                 !props.disabled && props.onClick(e, index)
               }
-              key={`row-item-${indexRow}`}
             />
           ))}
         </tbody>
