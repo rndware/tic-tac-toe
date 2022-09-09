@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { Difficulty, Lang, isDifficultyEnumKey } from "../types/game";
+import { Difficulty, Lang, isDifficultyEnum, isLangEnum } from "../types/game";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { I18nCopy } from "../types/app";
 import { useTranslation } from "react-i18next";
-import { defaultLang } from "../const/i18n";
-import { setDifficulty, getDifficulty } from "../reducers/SettingsSlice";
+import {
+  setDifficulty,
+  getDifficulty,
+  getLanguage,
+  setLanguage,
+} from "../reducers/SettingsSlice";
 import SettingsForm, { FormControlData } from "../components/settings-form";
 
 const SettingsContainer = () => {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation();
-
-  const { i18n } = useTranslation();
-  const [language, setLanguage] = useState(defaultLang);
+  const { t, i18n } = useTranslation();
+  const language = useAppSelector(getLanguage);
 
   const handleLangChange = (e: SelectChangeEvent<string>) => {
     const lang = e.target.value;
-    setLanguage(lang);
+    isLangEnum(lang) && dispatch(setLanguage(lang));
     i18n.changeLanguage(lang);
   };
 
@@ -34,8 +36,8 @@ const SettingsContainer = () => {
       value: useAppSelector(getDifficulty),
       enum: Difficulty,
       onChange: (e: SelectChangeEvent<string>) => {
-        isDifficultyEnumKey(e.target.value) &&
-          dispatch(setDifficulty(Difficulty[e.target.value]));
+        const difficulty = e.target.value;
+        isDifficultyEnum(difficulty) && dispatch(setDifficulty(difficulty));
       },
       options: settingsCopy.difficulty.options,
     },

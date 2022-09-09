@@ -22,14 +22,20 @@ export enum Difficulty {
 }
 
 export enum Lang {
-  en = "English",
-  de = "German",
+  en = "en",
+  de = "ge",
 }
 
-export function isDifficultyEnumKey(
-  key: string
-): key is keyof typeof Difficulty {
-  if (key in Difficulty) {
+export function isDifficultyEnum(value: string): value is Difficulty {
+  if (value in Difficulty) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function isLangEnum(value: string): value is Lang {
+  if (value in Lang) {
     return true;
   } else {
     return false;

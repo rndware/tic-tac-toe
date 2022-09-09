@@ -15,7 +15,9 @@ A simple Tic Tac Toe game built using Create React App.
 - Used Material UI for icons, inputs and buttons
 - Decoupled board from game logic
 - Use of services to decouple AI logic from slices
+- Keeping reducers 'flat' to avoid heavily nested data
 - I18n in English and German
+- Use of local storage for saving settings data
 - Undo button to replay interactions using board history
 - Storybook component explorer integration
 - Partially responsive

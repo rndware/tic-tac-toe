@@ -5,6 +5,10 @@ import {
   Action,
   PayloadAction,
 } from "@reduxjs/toolkit";
+
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+
 import boardReducer from "../reducers/BoardSlice";
 import playersSlice from "../reducers/PlayersSlice";
 import gameSlice from "../reducers/GameSlice";
@@ -30,17 +34,27 @@ function resetApp(
   return newState;
 }
 
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["settings"], // only persist user settings
+};
+
+const persistedReducer = persistReducer(persistConfig, combinedReducer);
+
 // TO-DO: resolve any type
 const rootReducer: any = (state: RootState, action: PayloadAction<any>) => {
   if (action.type === "app/reset") {
     state = resetApp(state, action);
   }
-  return combinedReducer(state, action);
+  return persistedReducer(state, action);
 };
 
 export const store = configureStore({
   reducer: rootReducer,
 });
+
+export const persistor = persistStore(store);
 
 export type AppStore = typeof store;
 export type AppDispatch = typeof store.dispatch;
