@@ -18,6 +18,7 @@ const GameContainer = () => {
 
   const gameMode = useAppSelector(getGameMode);
   const winningPlayer = useAppSelector(getWinningPlayer);
+  const gameOver = gameMode === Mode.Ended;
 
   // monitor 'dispatch' to avoid empty array warning
   useEffect(() => {
@@ -28,17 +29,13 @@ const GameContainer = () => {
     <div className={styles.GameContainer}>
       <div
         className={
-          styles[
-            `BoardContainer__wrapper${
-              gameMode === Mode.Ended ? "--blurred" : ""
-            }`
-          ]
+          styles[`BoardContainer__wrapper${gameOver ? "--blurred" : ""}`]
         }
       >
         <BoardContainer />
         <GameControlsContainer />
       </div>
-      {gameMode === Mode.Ended && (
+      {gameOver && (
         <GameOverBanner
           copy={t("gamePage", {
             name: winningPlayer?.name,
