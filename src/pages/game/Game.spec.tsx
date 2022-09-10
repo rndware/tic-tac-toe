@@ -6,7 +6,7 @@ jest.mock("../../containers/GameContainer", () => () => (
 ));
 
 describe("Game page", () => {
-  it("should render the game container to the player", () => {
+  it("should render the game content to the player", () => {
     const query = render(<Game />);
     expect(query.getByText("Game Container")).toBeTruthy();
   });
