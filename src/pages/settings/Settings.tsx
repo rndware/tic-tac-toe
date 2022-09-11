@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
 import SettingsContainer from "../../containers/SettingsContainer";
+
 import styles from "./SettingsPage.module.scss";
 
 const Settings = () => {

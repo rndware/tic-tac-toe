@@ -1,10 +1,10 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import classNames from "classnames";
-import { Mode } from "../../types/game";
-import { Player } from "../../types/player";
-import { I18nCopy } from "../../types/app";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Mode } from "../../types/game";
+import { I18nCopy } from "../../types/app";
+import { Player } from "../../types/player";
 
 import styles from "./GameOverBanner.module.scss";
 

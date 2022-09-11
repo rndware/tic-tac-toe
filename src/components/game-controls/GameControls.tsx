@@ -1,7 +1,8 @@
 import React, { MouseEvent } from "react";
 import Button from "@mui/material/Button";
-import styles from "./GameControls.module.scss";
 import { I18nCopy } from "../../types/app";
+
+import styles from "./GameControls.module.scss";
 
 interface GameControlProps {
   copy: I18nCopy;

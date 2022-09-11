@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { useTranslation } from "react-i18next";
+
 import { Mode } from "../types/game";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { startGame, getWinningPlayer } from "../reducers/GameSlice";
 import { getGameMode } from "../reducers/GameSlice";
 import BoardContainer from "./BoardContainer";

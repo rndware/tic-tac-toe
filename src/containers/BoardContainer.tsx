@@ -1,6 +1,6 @@
 import React from "react";
-import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { Mode } from "../types/game";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
 import Board from "../components/board";
 import { getGameMode, playMove } from "../reducers/GameSlice";
 import {
