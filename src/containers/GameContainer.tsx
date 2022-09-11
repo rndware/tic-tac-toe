@@ -28,6 +28,7 @@ const GameContainer = () => {
   return (
     <div className={styles.GameContainer}>
       <div
+        data-testid="board-container-wrapper"
         className={
           styles[`BoardContainer__wrapper${gameOver ? "--blurred" : ""}`]
         }
