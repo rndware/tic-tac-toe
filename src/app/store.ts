@@ -52,6 +52,11 @@ const rootReducer: any = (state: RootState, action: PayloadAction<any>) => {
 
 export const store = configureStore({
   reducer: rootReducer,
+  // Resolves https://stackoverflow.com/questions/61704805/getting-an-error-a-non-serializable-value-was-detected-in-the-state-when-using
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export const persistor = persistStore(store);
