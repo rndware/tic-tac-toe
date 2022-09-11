@@ -23,7 +23,7 @@ export enum Difficulty {
 
 export enum Lang {
   en = "en",
-  de = "ge",
+  de = "de",
 }
 
 export function isDifficultyEnum(value: string): value is Difficulty {
