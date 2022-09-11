@@ -12,7 +12,7 @@ import { I18nCopy } from "../../types/app";
 
 import styles from "./SettingsForm.module.scss";
 
-interface enumMap {
+interface EnumMap {
   [key: string]: string;
 }
 
@@ -25,7 +25,7 @@ interface SettingsFormProps {
 
 const renderSelectOptions = (
   key: string,
-  enumOptions: enumMap,
+  enumOptions: EnumMap,
   options: Options
 ) =>
   Object.keys(enumOptions).map((value: string) => (
@@ -38,7 +38,7 @@ export interface FormControlData {
   key: string;
   copy: I18nCopy;
   value: string;
-  enum: enumMap;
+  enum: EnumMap;
   onChange: (e: SelectChangeEvent<string>) => void;
   options: Options;
 }

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { getLanguage } from "../reducers/SettingsSlice";
 import type { RootState, AppDispatch } from "./store";
 
+// grab the default language in the store (which is preserved via redux-persist)
 export const useStoredLanguage = () => {
   const language = useAppSelector(getLanguage);
   const { i18n } = useTranslation();
