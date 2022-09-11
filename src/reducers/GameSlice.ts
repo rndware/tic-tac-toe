@@ -95,7 +95,7 @@ function freeToMarkAtIndex(markedGrid: GridData, index: GridIndex): boolean {
 }
 
 // TO-DO: reduce number of dispatch calls for optimisation
-export const playMove = createAsyncThunk<void, number, { state: RootState }>(
+export const playMove = createAsyncThunk<void, GridIndex, { state: RootState }>(
   "game/playMove",
   async (index: GridIndex, { dispatch, getState }) => {
     const firstState = getState();
