@@ -8,9 +8,9 @@ afterEach(() => {
 });
 
 describe("BorderCell", () => {
-  const id = 1;
+  const id = 0;
   const value = 1;
-  const cellTestId = "board-cell-1";
+  const cellTestId = `board-cell-${id}`;
 
   it("should highlight contents to player when highlighted", () => {
     const query = render(

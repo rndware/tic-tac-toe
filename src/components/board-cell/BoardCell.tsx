@@ -15,7 +15,7 @@ interface BoardCellProps {
 }
 
 const BoardCell = (props: BoardCellProps) => {
-  const fullId = props.id ? `board-cell-${props.id}` : undefined;
+  const fullId = props.id !== undefined ? `board-cell-${props.id}` : undefined;
   return (
     <div
       id={fullId}
