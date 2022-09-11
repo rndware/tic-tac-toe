@@ -42,7 +42,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, combinedReducer);
 
-// TO-DO: resolve any type
+// TODO: resolve any type
 const rootReducer: any = (state: RootState, action: PayloadAction<any>) => {
   if (action.type === "app/reset") {
     state = resetApp(state, action);

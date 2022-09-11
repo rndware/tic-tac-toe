@@ -67,5 +67,5 @@ describe("GameContainer", () => {
     });
   });
 
-  //TO-DO: draw and lose conditions
+  // TODO: draw and lose conditions
 });

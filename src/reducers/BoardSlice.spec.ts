@@ -1,4 +1,4 @@
-import { range } from "../utils";
+import { range } from "lodash";
 import boardReducer, {
   Board,
   markSquare,

@@ -60,7 +60,7 @@ export const gameSlice = createSlice({
 export const { start, end, setWinner, setWinningPlayer, setPlayingMove } =
   gameSlice.actions;
 
-// TO-DO: make not global
+// TODO: make not global
 let gameService: GameService;
 
 export const startGame = (): AppThunk => (dispatch, getState) => {
@@ -94,7 +94,7 @@ function freeToMarkAtIndex(markedGrid: GridData, index: GridIndex): boolean {
   return isGridIndex(markedGrid[index]);
 }
 
-// TO-DO: reduce number of dispatch calls for optimisation
+// TODO: reduce number of dispatch calls for optimisation
 export const playMove = createAsyncThunk<void, GridIndex, { state: RootState }>(
   "game/playMove",
   async (index: GridIndex, { dispatch, getState }) => {

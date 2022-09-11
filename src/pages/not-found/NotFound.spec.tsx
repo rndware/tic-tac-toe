@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import NotFound from "./NotFound";
 
 describe("Not found page", () => {
-  // TO-DO: get type
+  // TODO: get type
   let query: any;
 
   beforeEach(() => {

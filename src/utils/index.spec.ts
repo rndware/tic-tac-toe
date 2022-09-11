@@ -1,4 +1,5 @@
-import { chunkArray, sleep, range } from "./index";
+import { range } from "lodash";
+import { chunkArray, sleep } from "./index";
 
 describe("Index utils", () => {
   describe("chunkArray", () => {

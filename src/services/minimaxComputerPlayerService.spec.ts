@@ -1,7 +1,7 @@
 import Minimax from "tic-tac-toe-minimax";
+import { range } from "lodash";
 import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
 import { Difficulty, Mark } from "../types/game";
-import { range } from "../utils";
 
 describe("MinimaxComputerPlayerService", () => {
   const AIMark = Mark.x;
@@ -19,7 +19,7 @@ describe("MinimaxComputerPlayerService", () => {
       );
     });
 
-    //TO-DO: test AI player response to multiple moves
+    // TODO: test AI player response to multiple moves
   });
 
   describe("when the game is finished", () => {

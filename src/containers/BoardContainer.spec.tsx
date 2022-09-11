@@ -1,11 +1,11 @@
 import "@testing-library/jest-dom";
+import { range } from "lodash";
 import { gridSize } from "../const/gridData";
 import { HighlightColors } from "../types/player";
 import { cleanup } from "@testing-library/react";
 import { renderWithProviders } from "../utils/test-utils";
 
 import BoardContainer from "./BoardContainer";
-import { range } from "../utils";
 
 afterEach(() => {
   cleanup();

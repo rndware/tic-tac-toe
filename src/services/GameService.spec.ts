@@ -1,9 +1,9 @@
+import { range } from "lodash";
 import { Difficulty, Mark, Winner } from "../types/game";
 import { GridData } from "../types/grid";
 import { HighlightColors, Player } from "../types/player";
 import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
 import GameService from "./GameService";
-import { range } from "../utils";
 
 describe("GameService", () => {
   const huPlayer: Player = {

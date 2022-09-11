@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Intro from "./Intro";
 
 describe("Intro page", () => {
-  // TO-DO: get type
+  // TODO: get type
   let query: any;
 
   beforeEach(() => {

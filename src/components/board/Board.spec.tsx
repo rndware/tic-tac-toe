@@ -1,7 +1,7 @@
 import { render, cleanup, fireEvent } from "@testing-library/react";
+import { range } from "lodash";
 import "@testing-library/jest-dom";
 import Board from "./Board";
-import { range } from "../../utils";
 
 afterEach(() => {
   cleanup();

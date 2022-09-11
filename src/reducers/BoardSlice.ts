@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { range } from "lodash";
 import { Mark } from "../types/game";
 import { HighlightedIndexs, GridIndex, GridData } from "../types/grid";
 import { HighlightColors } from "../types/player";
 import { RootState } from "../app/store";
-import { range } from "../utils";
 import { gridSize } from "../const/gridData";
 
 // https://www.npmjs.com/package/tictactoe-minimax-ai

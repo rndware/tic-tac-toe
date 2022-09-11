@@ -124,5 +124,5 @@ describe("game reducer", () => {
     });
   });
 
-  //TO-DO: game/playMove reducer
+  // TODO: game/playMove reducer
 });
