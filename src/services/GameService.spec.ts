@@ -2,7 +2,7 @@ import { Difficulty, Mark, Winner } from "../types/game";
 import { GridData } from "../types/grid";
 import { HighlightColors, Player } from "../types/player";
 import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
-import gameService from "./GameService";
+import GameService from "./GameService";
 import { range } from "../utils";
 
 describe("GameService", () => {
@@ -18,7 +18,7 @@ describe("GameService", () => {
     mark: Mark.o,
   };
 
-  const service = new gameService(Difficulty.Easy, huPlayer, aiPlayer, 0);
+  const service = new GameService(Difficulty.Easy, huPlayer, aiPlayer, 0);
 
   describe("AI player makes a move", () => {
     it("should call MinimaxComputerPlayerService to get the result ", async () => {

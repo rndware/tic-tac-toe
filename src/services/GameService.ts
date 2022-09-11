@@ -5,7 +5,7 @@ import MinimaxComputerPlayerService from "./MinimaxComputerPlayerService";
 import { rowIndexes, columnIndexes, diagnalIndexes } from "../const/gridData";
 import { Player } from "../types/player";
 
-export default class gameService {
+export default class GameService {
   private computerAI: MinimaxComputerPlayerService;
   private humanPlayer: Player;
   private computerPlayer: Player;

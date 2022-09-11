@@ -2,7 +2,7 @@ jest.mock("../services/GameService");
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 
-import gameService from "../services/GameService";
+import GameService from "../services/GameService";
 import { Difficulty, Mode, Winner } from "../types/game";
 import { HighlightColors, PlayerType } from "../types/player";
 import { Mark } from "../types/game";
@@ -116,7 +116,7 @@ describe("game reducer", () => {
     });
 
     it("should start the game service with correct information", () => {
-      expect(gameService).toHaveBeenCalledWith(
+      expect(GameService).toHaveBeenCalledWith(
         Difficulty.Easy,
         humanPlayer,
         computerPlayer
