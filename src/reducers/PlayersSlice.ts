@@ -31,7 +31,7 @@ const initialState: Players = {
   },
 };
 
-function getOtherMark(mark: Mark | undefined): Mark {
+function getOtherMark(mark?: Mark): Mark {
   if (!mark) {
     return Mark.x;
   } else if (mark === Mark.o) {

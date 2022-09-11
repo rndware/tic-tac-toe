@@ -5,7 +5,7 @@ import { GridData } from "../types/grid";
 import { Player } from "../types/player";
 
 interface MarkRecord {
-  madeBy?: Player | undefined;
+  madeBy?: Player;
   boardSnapshot: GridData;
 }
 

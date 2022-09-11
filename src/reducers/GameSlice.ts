@@ -1,7 +1,7 @@
+import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { Mode, Winner } from "../types/game";
 import { isGridIndex, GridIndex, GridData } from "../types/grid";
 import GameService from "../services/GameService";
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "../app/store";
 import { appReset } from "../actions";
 import {
@@ -48,10 +48,10 @@ export const gameSlice = createSlice({
     setPlayingMove(state, action: PayloadAction<boolean>) {
       state.playingMove = action.payload;
     },
-    setWinner: (state, action: PayloadAction<Winner | null>) => {
+    setWinner: (state, action: PayloadAction<Winner>) => {
       state.winner = action.payload;
     },
-    setWinningPlayer: (state, action: PayloadAction<Player | null>) => {
+    setWinningPlayer: (state, action: PayloadAction<Player>) => {
       state.winningPlayer = action.payload;
     },
   },
@@ -145,7 +145,7 @@ export const playMove = createAsyncThunk<void, number, { state: RootState }>(
       if (winner !== Winner.draw) {
         const winningPlayer = gameService.getWinningPlayer();
 
-        dispatch(setWinningPlayer(winningPlayer));
+        dispatch(setWinningPlayer(winningPlayer!));
         dispatch(setHighlightColor(winningPlayer?.color!));
         dispatch(setHighlight(gameService.getWinningLine(finalMarkedGrid)));
       }
