@@ -50,23 +50,21 @@ export default class GameService {
   }
 
   getWinningLine(markedGrid: GridData): GridIndex[] {
-    const allIndexes = [rowIndexes, columnIndexes, diagnalIndexes];
+    const allIndexes = [rowIndexes, columnIndexes, diagnalIndexes].flat();
 
     let winningLine: GridIndex[] = [];
 
-    for (let directionIndexs of allIndexes) {
-      for (let lineIndexes of directionIndexs) {
-        if (
-          lineIndexes.every(
-            (index: GridIndex) =>
-              markedGrid[index] === this.getWinningPlayer()?.mark
-          )
-        ) {
-          winningLine = lineIndexes;
+    for (let lineIndexes of allIndexes) {
+      if (
+        lineIndexes.every(
+          (index: GridIndex) =>
+            markedGrid[index] === this.getWinningPlayer()?.mark
+        )
+      ) {
+        winningLine = lineIndexes;
 
-          // avoid extra looping when wining line found
-          break;
-        }
+        // avoid extra looping when wining line found
+        break;
       }
     }
 
