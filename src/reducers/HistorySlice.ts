@@ -28,12 +28,15 @@ export const historySlice = createSlice({
         boardSnapshot: GridData;
       }>
     ) => {
-      state.marksRecord.push({
-        ...(action.payload.player && {
-          madeBy: cloneDeep(action.payload.player),
-        }),
+      const record: MarkRecord = {
         boardSnapshot: cloneDeep(action.payload.boardSnapshot),
-      });
+      };
+
+      if (action.payload.player) {
+        record.madeBy = cloneDeep(action.payload.player);
+      }
+
+      state.marksRecord.push(record);
     },
     revertToPreviousInteraction(state) {
       state.marksRecord.splice(-2);
