@@ -21,8 +21,8 @@ describe("history reducer", () => {
     playerType: PlayerType.human,
   };
 
-  const moveOneSnapshot = [1, 2, 3, Mark.x, 5, 6, 7, 8];
-  const moveTwoSnapshot = [1, 2, Mark.o, Mark.x, 5, 6, 7, 8];
+  const moveOneSnapshot = [0, 1, 2, Mark.x, 4, 5, 6, 7];
+  const moveTwoSnapshot = [0, 1, Mark.o, Mark.x, 4, 5, 6, 7];
 
   const initialState: History = {
     marksRecord: [],

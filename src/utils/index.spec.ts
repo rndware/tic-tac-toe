@@ -1,4 +1,3 @@
-import { range } from "lodash";
 import { chunkArray, sleep } from "./index";
 
 describe("Index utils", () => {
@@ -15,12 +14,6 @@ describe("Index utils", () => {
   describe("sleep", () => {
     it("will sleep for n number of seconds", async () => {
       expect(await sleep(10));
-    });
-  });
-
-  describe("range", () => {
-    it("will generate an array of numbers from 0 to n", () => {
-      expect(range(3)).toEqual([0, 1, 2]);
     });
   });
 });
